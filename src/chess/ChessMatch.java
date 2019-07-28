@@ -9,7 +9,6 @@ import chess.pieces.king;
 public class ChessMatch {
 
 	private Board board;
-	private Position position;
 	
 	public ChessMatch() {
 		board = new Board(8,8);
@@ -43,12 +42,12 @@ public class ChessMatch {
 		return capturedPiece;
 	}
 	
+	
 	private void validateSourcePosition(Position source) {
-		if(!board.thereIsAPiece(position)) {
+		if(!board.thereIsAPiece(source)) {
 			throw new ChessException("There is no piece on source position");
 		}
 	}
-
 	
 	
 	private void placeNewPiece(char column, int row, ChessPiece piece) {
